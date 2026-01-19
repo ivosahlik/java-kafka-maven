@@ -1,0 +1,70 @@
+{
+  "info": {
+    "_postman_id": "e5fecb61-13b1-4d89-8bf6-b2f91e35e4b5",
+    "name": "Kafka",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "27702499",
+    "_collection_link": "https://go.postman.co/collection/27702499-e5fecb61-13b1-4d89-8bf6-b2f91e35e4b5?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "newOrder",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": \"a27d9492-1402-48d6-9bf7-2c59c76e8a34\",\n  \"name\": \"Ivo Vošahlík\",\n  \"nickName\": \"\",\n  \"store\": {\n    \"storeId\": 123,\n    \"address\": {\n      \"addressLine1\": \"1234 street\",\n      \"city\": \"Prague\",\n      \"state\": \"Czech\",\n      \"country\": \"Cz\",\n      \"zip\": \"11244\"\n    }\n  },\n  \"orderLineItems\": [\n    {\n      \"name\": \"Latte\",\n      \"size\": \"MEDIUM\",\n      \"quantity\": 1,\n      \"cost\": 3.99\n    }\n  ],\n  \"pickUp\": \"IN_STORE\",\n  \"orderedTime\": \"2022-08-24T04:46:28\",\n  \"status\": \"NEW\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8083/v1/coffee_orders",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8083",
+          "path": [
+            "v1",
+            "coffee_orders"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateCoffeeOrde",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"orderStatus\":\"PROCESSING\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8083/v1/coffee_orders/a27d9492-1402-48d6-9bf7-2c59c76e8a34",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8083",
+          "path": [
+            "v1",
+            "coffee_orders",
+            "a27d9492-1402-48d6-9bf7-2c59c76e8a34"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
