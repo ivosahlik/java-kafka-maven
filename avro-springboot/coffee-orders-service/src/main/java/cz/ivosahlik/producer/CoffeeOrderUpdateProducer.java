@@ -23,7 +23,7 @@ public class CoffeeOrderUpdateProducer {
 
 
         ListenableFuture<SendResult<String, CoffeeUpdateEvent>> listenableFuture = kafkaTemplate.send(producerRecord);
-        listenableFuture.addCallback(new ListenableFutureCallback<SendResult<String, CoffeeUpdateEvent>>() {
+        listenableFuture.addCallback(new ListenableFutureCallback<>() {
 
             @Override
             public void onFailure(Throwable ex) {
@@ -35,7 +35,6 @@ public class CoffeeOrderUpdateProducer {
                 handleSuccess(coffeeOrderUpdateAvro, result);
             }
         });
-
     }
 
     private void handleFailure(CoffeeUpdateEvent coffeeOrder, Throwable ex) {
