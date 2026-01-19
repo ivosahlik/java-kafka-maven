@@ -1,0 +1,11 @@
+{
+  "name": "OrderId",
+  "namespace": "cz.ivosahlik.domain.generated",
+  "type": "record",
+  "fields": [
+    {
+      "name": "id",
+      "type": "int"
+    }
+  ]
+}

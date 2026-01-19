@@ -1,0 +1,22 @@
+{
+  "id": 999,
+  "name": "Ivo Vošahlík",
+  "nickName": "",
+  "store": {
+    "id": 1,
+    "address": {
+      "addressLine1": "1234 Address Line 1",
+      "city": "Prague",
+      "state_province": "Prague",
+      "country": "CZ",
+      "zip": "12345"
+    }
+  },
+  "orderLineItems": [{
+    "name": "Caffe Latte",
+    "size": "MEDIUM",
+    "quantity": 1
+  }],
+  "ordered_time": "2022-06-16T18:40:55.472",
+ "status": "NEW"
+}
