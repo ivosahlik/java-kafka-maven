@@ -27,6 +27,11 @@ public class GreetingProducer {
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, ByteArraySerializer.class.getName());
+        // Acks
+        props.put(ProducerConfig.ACKS_CONFIG, "all");
+        // Retries
+        props.put(ProducerConfig.RETRIES_CONFIG, 3);
+        p
 
         KafkaProducer<String, byte[]> producer = new KafkaProducer<>(props);
 
