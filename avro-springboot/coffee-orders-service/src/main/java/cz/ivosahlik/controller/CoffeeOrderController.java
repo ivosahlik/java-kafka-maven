@@ -2,21 +2,19 @@ package cz.ivosahlik.controller;
 
 import cz.ivosahlik.dto.CoffeeOrderDTO;
 import cz.ivosahlik.service.CoffeeOrderService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/v1/coffee_orders")
 @Validated
 public class CoffeeOrderController {
-    private CoffeeOrderService coffeeOrderService;
-
-    public CoffeeOrderController(CoffeeOrderService coffeeOrderService) {
-        this.coffeeOrderService = coffeeOrderService;
-    }
+    private final CoffeeOrderService coffeeOrderService;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)

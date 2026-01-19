@@ -23,10 +23,6 @@ public class CoffeeOrderService {
     CoffeeOrderProducer coffeeOrderProducer;
     CoffeeOrderUpdateProducer coffeeOrderUpdateProducer;
 
-//    public CoffeeOrderService(CoffeeOrderProducer coffeeOrderProducer) {
-//        this.coffeeOrderProducer = coffeeOrderProducer;
-//    }
-
     public CoffeeOrderService(CoffeeOrderProducer coffeeOrderProducer, CoffeeOrderUpdateProducer coffeeOrderUpdateProducer) {
         this.coffeeOrderProducer = coffeeOrderProducer;
         this.coffeeOrderUpdateProducer = coffeeOrderUpdateProducer;
@@ -77,14 +73,13 @@ public class CoffeeOrderService {
     private Store getStore(CoffeeOrderDTO coffeeOrderDTO) {
         var storeDTO = coffeeOrderDTO.getStore();
 
-        var store = new Store(storeDTO.getStoreId(),
+        return new Store(storeDTO.getStoreId(),
                 new Address(storeDTO.getAddress().getAddressLine1(),
                         storeDTO.getAddress().getCity(),
                         storeDTO.getAddress().getState(),
                         storeDTO.getAddress().getCountry(),
                         storeDTO.getAddress().getZip()
                 ));
-        return store;
     }
 
     public CoffeeOrderUpdateDTO updateOrder(String orderId, CoffeeOrderUpdateDTO coffeeOrderUpdateDTO) {
