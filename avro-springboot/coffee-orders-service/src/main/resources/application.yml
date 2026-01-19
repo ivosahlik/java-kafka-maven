@@ -34,3 +34,15 @@ spring:
 # acks: 1   # pouze leader (default Kafka)
 # acks: all # leader + ISR (doporučeno)
 
+#Pro e-commerce / business eventy:
+#
+#  acks=all
+#  enable.idempotence=true
+#  retries=3
+#  min.insync.replicas=2
+#
+#
+#  ✔ žádná ztráta zpráv
+#  ✔ žádné duplikáty
+#  ✔ bezpečné při pádu brokeru
+
