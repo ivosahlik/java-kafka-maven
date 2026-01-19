@@ -15,10 +15,22 @@ spring:
       bootstrap-servers: localhost:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+      acks: all
+      retries: 3
+      properties:
+        enable.idempotence: true
     properties:
       schema.registry.url : http://localhost:8081
       value:
         subject:
           name:
             strategy: io.confluent.kafka.serializers.subject.RecordNameStrategy
+
+
+
+
+
+# acks: 0   # žádná garance
+# acks: 1   # pouze leader (default Kafka)
+# acks: all # leader + ISR (doporučeno)
 
