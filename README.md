@@ -1,5 +1,7 @@
 # Kafka - Data Contracts using Schema Registry
 
+https://www.confluent.io/blog/avro-kafka-data/
+
 This repository has the content to interact with Kafka using AVRO and Schema Registry.
 
 ## Set up Kafka Environment using Docker
