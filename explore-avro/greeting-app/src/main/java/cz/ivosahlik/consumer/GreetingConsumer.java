@@ -46,7 +46,7 @@ public class GreetingConsumer {
 
                     //log.info("Zone Ids : " + ZoneId.SHORT_IDS);
                     var utcDateTime = LocalDateTime.ofInstant(greeting.getCreatedDateTime(),ZoneOffset.UTC);
-                    var cstDateTime = LocalDateTime.ofInstant(greeting.getCreatedDateTime(), ZoneId.of("America/Prague"));
+                    var cstDateTime = LocalDateTime.ofInstant(greeting.getCreatedDateTime(), ZoneId.of("Europe/Prague"));
 
                     log.info("utcDateTime : {} , cstDateTime : {} " , utcDateTime,  cstDateTime);
                 }catch (Exception e){
